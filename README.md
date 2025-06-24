@@ -1,6 +1,6 @@
 # 🧠 FeedbackFusion – Internship Feedback Form
 
-A full-stack Node.js application designed by a curious B.Tech CSE student to collect internship feedback using modern technologies. This project was built as part of a full-stack development internship task to demonstrate form handling, inline styling, basic interactivity, and server-side validation.
+A full-stack Node.js application designed to collect internship feedback using modern technologies. This project was built as part of a full-stack development internship task to demonstrate form handling, inline styling, basic interactivity, and server-side validation.
 
 <br>
 📁 Project Structure
