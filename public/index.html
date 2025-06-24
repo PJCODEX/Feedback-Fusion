@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><title>FeedbackFusion - Internship Form</title></head>
+<body style="font-family: Arial, sans-serif; margin: 2rem; background: #f4f4f4;">
+  <h2 style="text-align:center; color: #333;">🧠 Internship Feedback Form</h2>
+  <form method="POST" action="/submit" onsubmit="return validateForm(this);" style="max-width: 600px; margin: auto; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 0 8px #aaa;">
+    <label>Name:</label><br>
+    <input type="text" name="name" value="Pooja" style="width:100%; padding: 0.5rem; margin-bottom: 1rem;" /><br>
+
+    <label>College Name:</label><br>
+    <input type="text" name="college" value="SPNREC Araria" style="width:100%; padding: 0.5rem; margin-bottom: 1rem;" /><br>
+
+    <label>Internship Role:</label><br>
+    <select name="role" style="width:100%; padding: 0.5rem; margin-bottom: 1rem;">
+      <option value="">-- Select --</option>
+      <option value="Frontend Developer">Frontend Developer</option>
+      <option value="Backend Developer">Backend Developer</option>
+      <option value="Full Stack Developer" selected>Full Stack Developer</option>
+      <option value="Data Analyst">Data Analyst</option>
+    </select><br>
+
+    <label>Technologies Used:</label><br>
+    <input type="checkbox" name="tech" value="HTML" checked /> HTML
+    <input type="checkbox" name="tech" value="CSS" checked /> CSS
+    <input type="checkbox" name="tech" value="JavaScript" checked /> JavaScript
+    <input type="checkbox" name="tech" value="Node.js" checked /> Node.js
+    <input type="checkbox" name="tech" value="MongoDB" checked /> MongoDB<br><br>
+
+    <label>Summary (Max 300 characters):</label><br>
+    <textarea name="summary" rows="4" cols="50" maxlength="300" oninput="updateCharCount(this);" style="width:100%; padding: 0.5rem;">I worked on building a full-stack feedback app using Node.js, Express, and MongoDB. I also added client-side validation and inline styles to make the UI look clean. It was a hands-on and insightful experience.</textarea>
+    <p id="charCount" style="text-align:right; color: gray; font-size: 0.9rem;">0 / 300</p>
+
+    <label>Rating:</label><br>
+    <input type="radio" name="rating" value="1" /> 1
+    <input type="radio" name="rating" value="2" /> 2
+    <input type="radio" name="rating" value="3" /> 3
+    <input type="radio" name="rating" value="4" /> 4
+    <input type="radio" name="rating" value="5" checked /> 5<br><br>
+
+    <button type="submit" style="padding: 0.7rem 1.5rem; background: #0066cc; color: white; border: none; border-radius: 6px; cursor: pointer;">Submit</button>
+  </form>
+
+  <div id="customAlert" style="display:none; margin-top:1rem; padding:0.8rem; background-color:#ffdddd; border-left:5px solid red; color:#a94442; border-radius:8px;">
+    ⚠️ <span id="alertMsg">Alert Message</span>
+  </div>
+
+  <script>
+    function showCustomAlert(message) {
+      const alertBox = document.getElementById('customAlert');
+      const alertMsg = document.getElementById('alertMsg');
+      alertMsg.textContent = message;
+      alertBox.style.display = 'block';
+      setTimeout(() => {
+        alertBox.style.display = 'none';
+      }, 4000);
+    }
+
+    function validateForm(form) {
+      const name = form.name.value.trim();
+      const college = form.college.value.trim();
+      const role = form.role.value;
+      const summary = form.summary.value.trim();
+      const rating = form.rating.value;
+      const techSelected = Array.from(form.querySelectorAll('input[name="tech"]')).some(input => input.checked);
+
+      if (!name || !college || !role || !summary || !rating || !techSelected) {
+        showCustomAlert("Please fill all fields and select at least one technology.");
+        return false;
+      }
+
+      if (summary.length > 300) {
+        showCustomAlert("Summary is too long!");
+        return false;
+      }
+
+      return true;
+    }
+
+    function updateCharCount(textarea) {
+      document.getElementById('charCount').innerText = textarea.value.length + ' / 300';
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      updateCharCount(document.querySelector('textarea[name="summary"]'));
+    });
+  </script>
+</body>
+</html>
