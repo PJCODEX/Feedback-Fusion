@@ -53,7 +53,7 @@ Edit
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/feedbackfusion.git
+git clone https://github.com/PJCODEX/feedbackfusion.git
 cd feedbackfusion
 
 Install dependencies
