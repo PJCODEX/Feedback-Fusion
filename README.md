@@ -48,26 +48,29 @@ Edit
 
 ---
 
-## 🛠️ How to Run Locally
+## 🤝 Contribution Guide
+Want to suggest a new feature or fix a bug?
+ 1. Fork the repo on GitHub:
+ Visit: **https://github.com/PJCODEX/Feedback-Fusion.git** and click the "Fork" button (top-right)
 
-1. **Clone the repository**
+ 2. Clone your fork
+**git clone https://github.com/your-username/Feedback-Fusion.git** <br> 
+cd Feedback-Fusion</br>
 
-```bash
-git clone https://github.com/PJCODEX/feedbackfusion.git
-cd feedbackfusion
+ 3. Create a new feature or bugfix branch
+**git checkout -b feature/your-feature-name**
+ 4. Make your changes
+(Open and edit files as needed using your code editor)
 
-Install dependencies
+ 5. Stage and commit your changes
+**git add .
+git commit -m "Add: Your short and meaningful description"**
 
-bash
-Copy
-npm install
+ 6. Push your changes to your fork
+**git push origin feature/your-feature-name**
 
-Start the server
-
-Copy
-Edit
-npm start
-
-Visit the app
-
-Open your browser and go to http://localhost:3000
+ 7. Open a Pull Request
+ - Go to your forked repo on GitHub
+ - Click "Compare & pull request"
+ - Add a clear title and description 
+ - Submit the PR to the original repo (PJCODEX/Feedback-Fusion)
