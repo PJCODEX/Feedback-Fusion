@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Pooja",
+    "college": "SPNREC Araria",
+    "role": "Full Stack Developer",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "MongoDB"
+    ],
+    "summary": "I worked on building a full-stack feedback app using Node.js, Express, and MongoDB. I also added client-side validation and inline styles to make the UI look clean. It was a hands-on and insightful experience.",
+    "rating": "5"
+  }
+]
