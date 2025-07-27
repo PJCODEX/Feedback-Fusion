@@ -8,7 +8,7 @@ const fs = require('fs');
 const app = express();
 const PORT = 3000;
 
-const dataPath = path.join(__dirname, 'submission.json');
+const dataPath = path.join(__dirname, 'public', 'frontend', 'submission.json');
 const submissions = [];
 
 // Load existing data if available
