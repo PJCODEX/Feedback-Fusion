@@ -56,8 +56,20 @@ app.post('/submit', (req, res) => {
 
 // Optional route to see all submissions
 app.get('/submissions', (req, res) => {
+  const filePath = path.join(__dirname, 'submission.json');
+  let fileData = [];
+
+  try {
+    // Read the latest file contents each time this route is hit
+    const rawData = fs.readFileSync(filePath, 'utf8');
+    fileData = JSON.parse(rawData);
+  } catch (err) {
+    console.error("Error reading or parsing submission.json:", err);
+    return res.send('<h2>Error reading submissions. Try again later.</h2>');
+  }
+
   let html = '<h1 style="text-align:center">All Submissions</h1>';
-  submissions.forEach((s, i) => {
+  fileData.forEach((s, i) => {
     html += `<div style="margin: 1rem; padding: 1rem; border: 1px solid #ccc; border-radius: 8px">
       <strong>${i + 1}. ${s.name}</strong> from <em>${s.college}</em> did a <b>${s.role}</b> internship.<br>
       Tech: ${s.tech.join(', ')}<br>
@@ -65,8 +77,10 @@ app.get('/submissions', (req, res) => {
       Rating: ${s.rating}/5
     </div>`;
   });
+
   res.send(html);
 });
+
 
 // Start the server
 app.listen(PORT, () => {
