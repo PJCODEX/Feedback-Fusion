@@ -56,7 +56,7 @@ app.post('/submit', (req, res) => {
 
 // Optional route to see all submissions
 app.get('/submissions', (req, res) => {
-  const filePath = path.join(__dirname, 'submission.json');
+ const filePath = path.join(__dirname, 'public', 'frontend', 'submission.json');
   let fileData = [];
 
   try {
