@@ -30,7 +30,7 @@ Edit
   - Temporary in-memory storage
   - Persistent storage via `submission.json`
 
-- **Deployment-Link:** https://feedback-fusion-dw4o.onrender.com
+- **Deployment-Link:** https://feedback-fusion.onrender.com
 
 ---
 
